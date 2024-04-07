@@ -35,6 +35,16 @@ class CustomAppBar extends StatelessWidget {
               size: 22,
             ),
           ),
+          //Spacer(),
+          IconButton(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.klogin);
+            },
+            icon: const Icon(
+              Icons.logout,
+              size: 22,
+            ),
+          ),
         ],
       ),
     );

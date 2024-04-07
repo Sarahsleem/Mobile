@@ -72,7 +72,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       () {
         // Get.to(() => const HomeView(),
         //    transition: Transition.downToUp, duration: kTranstionDuration);
-        GoRouter.of(context).push(AppRouter.kHomeView);
+        GoRouter.of(context).push(AppRouter.klogin);
       },
     );
   }
