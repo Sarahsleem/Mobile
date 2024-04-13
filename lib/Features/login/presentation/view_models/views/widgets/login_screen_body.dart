@@ -1,3 +1,4 @@
+import 'package:bookly_application/Features/login/services/auth_service.dart';
 import 'package:bookly_application/constants.dart';
 import 'package:bookly_application/core/utils/app_router.dart';
 import 'package:bookly_application/core/utils/assets.dart';
@@ -33,8 +34,9 @@ class LoginScreenBody extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15)),
                   child: MaterialButton(
-                      onPressed: () {
-                       GoRouter.of(context).push(AppRouter.kHomeView);
+                      onPressed: () async {
+                        await AuthService().signInWithGoogle();
+                         GoRouter.of(context).push(AppRouter.kHomeView);
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +49,7 @@ class LoginScreenBody extends StatelessWidget {
                             ),
                           ),
                           const SizedBox( width: 5, ),
-                          FaIcon(FontAwesomeIcons.google,
+                          const FaIcon(FontAwesomeIcons.google,
                           color: Colors.black), 
                         ],
                       )),
