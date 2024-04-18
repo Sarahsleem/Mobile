@@ -42,9 +42,7 @@ dependencies:
   equatable: ^2.0.5
   dartz: ^0.10.1
   dio: ^5.3.3
-  firebase_core: ^2.27.0
-  google_sign_in: ^6.2.1
-  firebase_auth: ^4.17.8
+  flutter_toggle_tab: ^1.4.1
 
 dev_dependencies:
   flutter_test:
