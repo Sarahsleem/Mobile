@@ -1,10 +1,10 @@
 
 import 'package:bookly_application/Features/home/presenations/views/film_details_view.dart';
-import 'package:bookly_application/Features/login/presentation/view_models/views/login_view.dart';
 import 'package:go_router/go_router.dart';
 import '../../Features/Splash/presentation/views/splash_view.dart';
 import '../../Features/home/presenations/views/home_view.dart';
 import '../../Features/search/presentation/views/search_view.dart';
+import '../../Features/user/presentation/view_models/views/user_screen.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/homeView';
@@ -24,7 +24,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: klogin,
-        builder: (context, state) => const LoginViewScreen(),
+        builder: (context, state) => const TotalScreen(),
       ),
       GoRoute(
         path: kBookDetailsView,
