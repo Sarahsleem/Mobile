@@ -43,6 +43,9 @@ dependencies:
   dartz: ^0.10.1
   dio: ^5.3.3
   flutter_toggle_tab: ^1.4.1
+  shared_preferences: ^2.2.3
+  flutter_progress_hud: ^2.0.2
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

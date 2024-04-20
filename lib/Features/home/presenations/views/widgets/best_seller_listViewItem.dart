@@ -71,7 +71,7 @@ class BestSellerListViewItem extends StatelessWidget {
                         ),
                       ), */
                       const Spacer(),
-                      const FilmRating(),
+                       FilmRating(),
                     ],
                   ),
                 ],

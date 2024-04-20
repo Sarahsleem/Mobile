@@ -1,3 +1,4 @@
+import 'package:bookly_application/Features/user/presentation/repos/regestrationApi.dart';
 import 'package:bookly_application/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -15,7 +16,7 @@ class Registeration extends StatefulWidget {
 }
 
 class _RegisterationState extends State<Registeration> {
-  TextEditingController fulLName = TextEditingController();
+  TextEditingController userName = TextEditingController();
 
   TextEditingController emailCont = TextEditingController();
 
@@ -40,7 +41,7 @@ class _RegisterationState extends State<Registeration> {
             CustomTextField(
               icon: Icons.person,
               hintText: 'User Name',
-              cont: fulLName,
+              cont: userName,
             ),
             const SizedBox(
               height: 20,
@@ -111,8 +112,11 @@ class _RegisterationState extends State<Registeration> {
             CustomButon(
               text: 'Register',
               onTap: () {
-                if (formKey.currentState!.validate()) {}
-                GoRouter.of(context).push(AppRouter.kHomeView);
+                if (formKey.currentState!.validate()) {
+                   RegisterApi().userRegister(context: context, userNameCont: userName, emailcont: emailCont, passcont: passCont);
+                  // GoRouter.of(context).push(AppRouter.kHomeView);
+                }
+               
               },
             ),
           ],

@@ -7,7 +7,7 @@ class CustomFilmDetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
           onPressed: () {
@@ -15,12 +15,12 @@ class CustomFilmDetailsAppBar extends StatelessWidget {
           },
           icon: const Icon(Icons.close),
         ),
-        IconButton(
+        /* IconButton(
           onPressed: () {},
           icon: const Icon(
             Icons.shopping_cart_outlined,
           ),
-        )
+        ) */
       ],
     );
   }

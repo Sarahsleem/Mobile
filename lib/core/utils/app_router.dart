@@ -1,5 +1,6 @@
 
 import 'package:bookly_application/Features/home/presenations/views/film_details_view.dart';
+import 'package:bookly_application/Features/home/presenations/views/first_films_list_view.dart';
 import 'package:go_router/go_router.dart';
 import '../../Features/Splash/presentation/views/splash_view.dart';
 import '../../Features/home/presenations/views/home_view.dart';
@@ -11,12 +12,13 @@ abstract class AppRouter {
   static const kBookDetailsView = '/bookDetailsView';
   static const kSearchView = '/searchView';
   static const klogin = '/loginView';
+  static const kfirstFilmsList = '/firstFilmsList';
 
   static final router = GoRouter(
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const SplashView(),
+        builder: (context, state) => const FirstFilmsListView(),
       ),
       GoRoute(
         path: kHomeView,
@@ -33,6 +35,10 @@ abstract class AppRouter {
       GoRoute(
         path: kSearchView,
         builder: (context, state) => const SearchView(),
+      ),
+       GoRoute(
+        path: kfirstFilmsList,
+        builder: (context, state) => const FirstFilmsListView(),
       ),
     ],
   );

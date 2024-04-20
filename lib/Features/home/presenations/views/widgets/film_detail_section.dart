@@ -4,6 +4,7 @@
 import 'package:bookly_application/Features/home/presenations/views/widgets/custom_FilmItem.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/film_rating.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/films_action.dart';
+import 'package:bookly_application/Features/home/presenations/views/widgets/userRating.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
@@ -27,10 +28,10 @@ class FilmDetailSection extends StatelessWidget {
           'Divergent',
           style: Styles.textStyle30,
         ),
-        const SizedBox(
+       /*  const SizedBox(
           height: 6,
-        ),
-        Opacity(
+        ), */
+       /*  Opacity(
           opacity: 0.7,
           child: Text(
             'Neil Burger',
@@ -39,13 +40,11 @@ class FilmDetailSection extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-        ),
+        ), */
         const SizedBox(
           height: 18,
         ),
-        const FilmRating(
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
+        userRating(),
         const SizedBox(
           height: 25,
         ),
