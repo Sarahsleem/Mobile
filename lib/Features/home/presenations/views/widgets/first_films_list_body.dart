@@ -6,6 +6,7 @@ import 'package:bookly_application/core/utils/app_router.dart';
 import 'package:bookly_application/core/utils/assets.dart';
 import 'package:bookly_application/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class FirstFilmsListBody extends StatelessWidget {
@@ -18,29 +19,68 @@ class FirstFilmsListBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children:  [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: CustomAppBar(),
+                padding:const EdgeInsets.symmetric(horizontal: 30),
+                child: Padding(
+      padding:  EdgeInsets.only(
+        top: 40,
+        bottom: 20,
+      ),
+      child: Row(
+        children: [
+          SizedBox(
+            height: 75,
+              width: 75,
+            child: Image.asset(
+              AssetsData.logo,
+              
+            ),
+          ),
+          Spacer(),
+          IconButton(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.klogin);
+            },
+            icon: const Icon(
+              Icons.logout,
+              size: 22,
+            ),
+          ),
+        ],
+      ),
+    ),
               ),
-              FeaturedBooksListView(),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
-              Padding(
+               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
-                child: Text(
-                  'Recommended for you',
-                  style: Styles.textStyle18,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Give us a taste of your taste \n  Kindly rate the following films',
+                      style: Styles.textStyle18,
+                    ),
+                    TextButton(onPressed: (){
+                     GoRouter.of(context).push(AppRouter.kHomeView);
+                    },
+                    child: const Text(
+                      'Done',
+                      style: Styles.textStyle18,
+                    ),
+                    )
+                  ],
                 ),
               ),
-              SizedBox(
+           const   SizedBox(
                 height: 5,
               ),
             ],
           ),
         ),
-        const SliverFillRemaining(
+         SliverFillRemaining(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.0),
             child: BestSellerListView(),

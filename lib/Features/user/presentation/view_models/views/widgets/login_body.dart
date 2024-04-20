@@ -20,62 +20,55 @@ class _LoginState extends State<LoginScreen> {
   TextEditingController emailCont = TextEditingController();
 
   TextEditingController passCont = TextEditingController();
-  bool _isLoading = false;
+  
 
   var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return ProgressHUD(
-      child: 
-      Builder(
-        builder: (context) => Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-          child: Form(
-            key: formKey,
-            child: Column(
-              children: [
-                CustomTextField(
-                  icon: Icons.mail,
-                  hintText: 'Email',
-                  cont: emailCont,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                CustomField(
-                  hintText: 'Password',
-                  cont: passCont,
-                ),
-                /* CustomChecktile(
-                  preText: 'Remember me',
-                  sufText: 'Forget password?',
-                  onTap: () {
-                    GoRouter.of(context).push('/ForgetPass');
-                  },
-                ), */
-                const SizedBox(
-                  height: 50,
-                ),
-                CustomButon(
-                  text: 'Login',
-                  onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      final progress = ProgressHUD.of(context);
-                      setState(() {
-                        progress!.show();
-                      });
-                      LoginUserApi().userLogin(context: context, emailcont: emailCont, passcont: passCont);
-                      setState(() {
-                         progress!.dismiss();
-                      });
-                      // GoRouter.of(context).push(AppRouter.kHomeView);
-                    }
-                   
-                  },
-                ),
-              ],
-            ),
+    return Builder(
+      builder: (context) => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: Form(
+          key: formKey,
+          child: Column(
+            children: [
+              CustomTextField(
+                icon: Icons.mail,
+                hintText: 'Email',
+                cont: emailCont,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomField(
+                hintText: 'Password',
+                cont: passCont,
+              ),
+              /* CustomChecktile(
+                preText: 'Remember me',
+                sufText: 'Forget password?',
+                onTap: () {
+                  GoRouter.of(context).push('/ForgetPass');
+                },
+              ), */
+              const SizedBox(
+                height: 50,
+              ),
+              CustomButon(
+                text: 'Login',
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    
+                    
+                    LoginUserApi().userLogin(context: context, emailcont: emailCont, passcont: passCont);
+                    
+                    // GoRouter.of(context).push(AppRouter.kHomeView);
+                  }
+                 
+                },
+              ),
+            ],
           ),
         ),
       ),

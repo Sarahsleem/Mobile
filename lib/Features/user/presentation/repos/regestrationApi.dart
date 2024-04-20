@@ -26,7 +26,7 @@ class RegisterApi {
       Response response = await Dio().post("$registerApiUrl", data: requestBody);
       if (response.statusCode == 200 || response.statusCode == 201) {
         print(response.data);
-        GoRouter.of(context).push(AppRouter.kHomeView);
+        GoRouter.of(context).push(AppRouter.kfirstFilmsList);
         print(response.data["AddedID"]);
       
 
