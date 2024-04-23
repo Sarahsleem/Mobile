@@ -3,7 +3,6 @@
 
 import 'package:bookly_application/Features/home/presenations/views/widgets/custom_FilmItem.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/film_rating.dart';
-import 'package:bookly_application/Features/home/presenations/views/widgets/films_action.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/userRating.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +47,7 @@ class FilmDetailSection extends StatelessWidget {
         const SizedBox(
           height: 25,
         ),
-        const FilmsAction(),
+        //const FilmsAction(),
       ],
     );
   }
