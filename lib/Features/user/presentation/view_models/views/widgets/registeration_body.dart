@@ -94,7 +94,7 @@ class _RegisterationState extends State<Registeration> {
                 ),
                 prefixIconColor: borderColor,
                 suffixIconColor: borderColor,
-                prefixIcon:const Icon(Icons.key),
+                prefixIcon: const Icon(Icons.key),
                 suffixIcon: IconButton(
                   onPressed: () {
                     setState(() {
@@ -113,10 +113,13 @@ class _RegisterationState extends State<Registeration> {
               text: 'Register',
               onTap: () {
                 if (formKey.currentState!.validate()) {
-                   RegisterApi().userRegister(context: context, userNameCont: userName, emailcont: emailCont, passcont: passCont);
+                  RegisterApi().userRegister(
+                      context: context,
+                      userNameCont: userName,
+                      emailcont: emailCont,
+                      passcont: passCont);
                   // GoRouter.of(context).push(AppRouter.kHomeView);
                 }
-               
               },
             ),
           ],

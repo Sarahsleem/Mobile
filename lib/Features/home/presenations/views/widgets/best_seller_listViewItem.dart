@@ -1,4 +1,3 @@
-
 import 'package:bookly_application/Features/home/presenations/views/widgets/film_rating.dart';
 import 'package:bookly_application/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +70,7 @@ class BestSellerListViewItem extends StatelessWidget {
                         ),
                       ), */
                       const Spacer(),
-                       FilmRating(),
+                      FilmRating(),
                     ],
                   ),
                 ],

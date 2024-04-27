@@ -1,7 +1,4 @@
-
 import 'package:bookly_application/Features/home/presenations/views/widgets/Similar_films_section.dart';
-
-
 
 import 'package:bookly_application/Features/home/presenations/views/widgets/custom_film_details_appBar.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/film_detail_section.dart';
@@ -13,7 +10,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/widgets/custom_button.dart';
-
 
 class FilmDetailsViewBody extends StatelessWidget {
   const FilmDetailsViewBody({super.key});

@@ -20,7 +20,6 @@ class _LoginState extends State<LoginScreen> {
   TextEditingController emailCont = TextEditingController();
 
   TextEditingController passCont = TextEditingController();
-  
 
   var formKey = GlobalKey<FormState>();
 
@@ -59,13 +58,13 @@ class _LoginState extends State<LoginScreen> {
                 text: 'Login',
                 onTap: () {
                   if (formKey.currentState!.validate()) {
-                    
-                    
-                    LoginUserApi().userLogin(context: context, emailcont: emailCont, passcont: passCont);
-                    
+                    LoginUserApi().userLogin(
+                        context: context,
+                        emailcont: emailCont,
+                        passcont: passCont);
+
                     // GoRouter.of(context).push(AppRouter.kHomeView);
                   }
-                 
                 },
               ),
             ],

@@ -19,29 +19,28 @@ class RegisterApi {
     try {
       print('before');
       Map<String, dynamic> requestBody = {
-        'username' : userNameCont.text,
+        'username': userNameCont.text,
         'email': emailcont.text,
         'password': passcont.text,
       };
-      Response response = await Dio().post("$registerApiUrl", data: requestBody);
+      Response response =
+          await Dio().post("$registerApiUrl", data: requestBody);
       if (response.statusCode == 200 || response.statusCode == 201) {
         print(response.data);
         GoRouter.of(context).push(AppRouter.kfirstFilmsList);
         print(response.data["AddedID"]);
-      
 
         final SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setString("AddedID", response.data["AddedID"]);
         String? AddedId = prefs.getString("AddedID");
         print("Id is : $AddedId");
         print("after");
-       
       }
     } catch (e) {
       if (e is DioException) {
         print(e.response?.data);
-        _showErrorDialog(
-            context, 'Format of data isn\'t correct',userNameCont, emailcont, passcont);
+        _showErrorDialog(context, 'Format of data isn\'t correct', userNameCont,
+            emailcont, passcont);
       }
     }
   }
@@ -99,4 +98,3 @@ void _showErrorDialog(
     },
   );
 }
-
