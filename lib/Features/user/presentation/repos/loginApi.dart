@@ -22,7 +22,7 @@ class LoginUserApi {
       Response response = await Dio().post("$loginUserUrl", data: requestBody);
       if (response.statusCode == 200 || response.statusCode == 201) {
         print(response.data);
-       GoRouter.of(context).push(AppRouter.kHomeView);
+        GoRouter.of(context).push(AppRouter.kHomeView);
         print(response.data["AddedID"]);
 
         final SharedPreferences prefs = await SharedPreferences.getInstance();

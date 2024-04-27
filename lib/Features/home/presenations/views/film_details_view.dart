@@ -1,4 +1,3 @@
-
 import 'package:bookly_application/Features/home/presenations/views/widgets/film_detais_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';

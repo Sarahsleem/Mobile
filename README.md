@@ -1,4 +1,4 @@
-# absolute_cinema
+.# absolute_cinema
 
 A new Flutter project.
 

@@ -16,30 +16,29 @@ class SearchViewBody extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-       // leading: ,
+        // leading: ,
         actions: [],
-        
       ),
       body: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          CustomSearchText(),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            'Search Result',
-            style: Styles.textStyle18,
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Expanded(child: SearchResultListView()),
-        ],
+        padding: const EdgeInsets.symmetric(horizontal: 30.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            CustomSearchText(),
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              'Search Result',
+              style: Styles.textStyle18,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Expanded(child: SearchResultListView()),
+          ],
+        ),
       ),
-    ),
     );
   }
 }
