@@ -1,4 +1,3 @@
-
 import 'package:bookly_application/Features/home/presenations/views/widgets/similar_films_listView.dart';
 import 'package:bookly_application/core/utils/styles.dart';
 import 'package:flutter/material.dart';

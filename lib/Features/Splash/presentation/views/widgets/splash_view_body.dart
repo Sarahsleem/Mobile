@@ -43,9 +43,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height*0.5,
-          width: MediaQuery.of(context).size.width*0.75,
-          child: Image.asset(AssetsData.splashImage)),
+            height: MediaQuery.of(context).size.height * 0.5,
+            width: MediaQuery.of(context).size.width * 0.75,
+            child: Image.asset(AssetsData.splashImage)),
         const SizedBox(
           height: 4,
         ),

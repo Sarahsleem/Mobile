@@ -14,47 +14,46 @@ class FirstFilmsListBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   CustomScrollView(
+    return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:  [
+            children: [
               Padding(
-                padding:const EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Padding(
-      padding:  EdgeInsets.only(
-        top: 40,
-        bottom: 20,
-      ),
-      child: Row(
-        children: [
-          SizedBox(
-            height: 75,
-              width: 75,
-            child: Image.asset(
-              AssetsData.logo,
-              
-            ),
-          ),
-          Spacer(),
-          IconButton(
-            onPressed: () {
-              GoRouter.of(context).push(AppRouter.klogin);
-            },
-            icon: const Icon(
-              Icons.logout,
-              size: 22,
-            ),
-          ),
-        ],
-      ),
-    ),
+                  padding: EdgeInsets.only(
+                    top: 40,
+                    bottom: 20,
+                  ),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: 75,
+                        width: 75,
+                        child: Image.asset(
+                          AssetsData.logo,
+                        ),
+                      ),
+                      Spacer(),
+                      IconButton(
+                        onPressed: () {
+                          GoRouter.of(context).push(AppRouter.klogin);
+                        },
+                        icon: const Icon(
+                          Icons.logout,
+                          size: 22,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 8,
               ),
-               Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,24 +62,25 @@ class FirstFilmsListBody extends StatelessWidget {
                       'Give us a taste of your taste \n  Kindly rate the following films',
                       style: Styles.textStyle18,
                     ),
-                    TextButton(onPressed: (){
-                     GoRouter.of(context).push(AppRouter.kHomeView);
-                    },
-                    child: const Text(
-                      'Done',
-                      style: Styles.textStyle18,
-                    ),
+                    TextButton(
+                      onPressed: () {
+                        GoRouter.of(context).push(AppRouter.kHomeView);
+                      },
+                      child: const Text(
+                        'Done',
+                        style: Styles.textStyle18,
+                      ),
                     )
                   ],
                 ),
               ),
-           const   SizedBox(
+              const SizedBox(
                 height: 5,
               ),
             ],
           ),
         ),
-         SliverFillRemaining(
+        SliverFillRemaining(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.0),
             child: BestSellerListView(),

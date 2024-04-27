@@ -1,4 +1,3 @@
-
 import 'package:bookly_application/Features/home/presenations/views/widgets/custom_FilmItem.dart';
 import 'package:flutter/material.dart';
 

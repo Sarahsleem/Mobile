@@ -1,4 +1,3 @@
-
 import 'package:bookly_application/Features/home/presenations/views/film_details_view.dart';
 import 'package:bookly_application/Features/home/presenations/views/first_films_list_view.dart';
 import 'package:go_router/go_router.dart';
@@ -36,7 +35,7 @@ abstract class AppRouter {
         path: kSearchView,
         builder: (context, state) => const SearchView(),
       ),
-       GoRoute(
+      GoRoute(
         path: kfirstFilmsList,
         builder: (context, state) => const FirstFilmsListView(),
       ),

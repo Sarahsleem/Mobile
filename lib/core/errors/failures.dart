@@ -1,2 +1,7 @@
-abstract class Failure{}
-class ServerFailure extends Failure{}
+abstract class Failure {
+  Failure(String s);
+}
+
+class ServerFailure extends Failure {
+  ServerFailure(super.s);
+}
