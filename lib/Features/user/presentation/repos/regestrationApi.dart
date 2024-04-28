@@ -9,6 +9,8 @@ import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterApi {
+  static String ?id;
+
   static const registerApiUrl =
       "https://backend-in-db-project.onrender.com/signup";
   userRegister(
@@ -33,6 +35,8 @@ class RegisterApi {
         final SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setString("AddedID", response.data["AddedID"]);
         String? AddedId = prefs.getString("AddedID");
+        id=AddedId;
+
         print("Id is : $AddedId");
         print("after");
       }

@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginUserApi {
+  static String ?id;
   static const loginUserUrl =
       "https://backend-in-db-project.onrender.com/login";
   userLogin(
@@ -28,6 +29,7 @@ class LoginUserApi {
         final SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setString("AddedID", response.data["AddedID"]);
         String? AddedId = prefs.getString("AddedID");
+        id=AddedId;
         print("Id is : $AddedId");
         print("after");
       }

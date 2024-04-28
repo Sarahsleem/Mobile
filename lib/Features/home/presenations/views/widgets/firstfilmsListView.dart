@@ -1,25 +1,24 @@
 import 'package:bookly_application/Features/home/model/filmdetailsmodel.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_listViewItem.dart';
 import 'package:bookly_application/Features/home/repo/Recommendationsapi.dart';
-import 'package:bookly_application/Features/user/presentation/repos/loginApi.dart';
+import 'package:bookly_application/Features/user/presentation/repos/regestrationApi.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class BestSellerListView extends StatefulWidget {
-  const BestSellerListView({super.key});
+class firstfilmsListView extends StatefulWidget {
+  const firstfilmsListView({super.key});
   @override
-  State<BestSellerListView> createState() => _BestSellerListViewState();
+  State<firstfilmsListView> createState() => _BestSellerListViewState();
 }
 
-class _BestSellerListViewState extends State<BestSellerListView> {
+class _BestSellerListViewState extends State<firstfilmsListView> {
 
-  Future<List<Films>> filmsFuture= recommendationApi(id: LoginUserApi.id);
+  Future<List<Films>> filmsFuture= recommendationApi(id: RegisterApi.id);
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Films>>(
 
 
-         future: filmsFuture,
+      future: filmsFuture,
       builder: (BuildContext context, AsyncSnapshot<List<Films>> snapshot)
       {if (snapshot.connectionState == ConnectionState.waiting) {
         // until data is fetched, show loader
