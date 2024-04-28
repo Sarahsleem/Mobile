@@ -1,14 +1,5 @@
-<<<<<<< HEAD
-
-
-
 import 'package:bookly_application/Features/home/presenations/views/widgets/custom_FilmItem.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/film_rating.dart';
-import 'package:bookly_application/Features/home/presenations/views/widgets/films_action.dart';
-=======
-import 'package:bookly_application/Features/home/presenations/views/widgets/custom_FilmItem.dart';
-import 'package:bookly_application/Features/home/presenations/views/widgets/film_rating.dart';
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 import 'package:bookly_application/Features/home/presenations/views/widgets/userRating.dart';
 import 'package:flutter/material.dart';
 
@@ -33,17 +24,10 @@ class FilmDetailSection extends StatelessWidget {
           'Divergent',
           style: Styles.textStyle30,
         ),
-<<<<<<< HEAD
-       /*  const SizedBox(
-          height: 6,
-        ), */
-       /*  Opacity(
-=======
         /*  const SizedBox(
           height: 6,
         ), */
         /*  Opacity(
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
           opacity: 0.7,
           child: Text(
             'Neil Burger',
@@ -60,11 +44,7 @@ class FilmDetailSection extends StatelessWidget {
         const SizedBox(
           height: 25,
         ),
-<<<<<<< HEAD
-        const FilmsAction(),
-=======
         //const FilmsAction(),
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
       ],
     );
   }

@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-
 import 'package:bookly_application/Features/home/presenations/views/widgets/Similar_films_section.dart';
 
-
-
-=======
-import 'package:bookly_application/Features/home/presenations/views/widgets/Similar_films_section.dart';
-
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 import 'package:bookly_application/Features/home/presenations/views/widgets/custom_film_details_appBar.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/film_detail_section.dart';
 
@@ -19,10 +11,6 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/widgets/custom_button.dart';
 
-<<<<<<< HEAD
-
-=======
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 class FilmDetailsViewBody extends StatelessWidget {
   const FilmDetailsViewBody({super.key});
 

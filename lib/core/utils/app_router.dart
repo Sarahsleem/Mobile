@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 import 'package:bookly_application/Features/home/presenations/views/film_details_view.dart';
 import 'package:bookly_application/Features/home/presenations/views/first_films_list_view.dart';
 import 'package:go_router/go_router.dart';
@@ -39,11 +35,7 @@ abstract class AppRouter {
         path: kSearchView,
         builder: (context, state) => const SearchView(),
       ),
-<<<<<<< HEAD
-       GoRoute(
-=======
       GoRoute(
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
         path: kfirstFilmsList,
         builder: (context, state) => const FirstFilmsListView(),
       ),

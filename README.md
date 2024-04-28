@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# absolute_cinema
-=======
 .# absolute_cinema
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 
 A new Flutter project.
 

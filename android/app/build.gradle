@@ -1,11 +1,8 @@
 plugins {
     id "com.android.application"
-<<<<<<< HEAD
-=======
     // START: FlutterFire Configuration
     id 'com.google.gms.google-services'
     // END: FlutterFire Configuration
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }
@@ -30,15 +27,9 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.absolute_cinema"
-<<<<<<< HEAD
-    compileSdkVersion 34
-    ndkVersion flutter.ndkVersion
-
-=======
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
     compileSdkVersion 34
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -57,18 +48,11 @@ android {
         applicationId "com.example.absolute_cinema"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-<<<<<<< HEAD
-        minSdkVersion 20
-        targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
-=======
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
     }
 
     buildTypes {
@@ -84,10 +68,6 @@ flutter {
     source '../..'
 }
 
-<<<<<<< HEAD
-dependencies {}
-=======
 dependencies {
     implementation 'com.android.support:multidex:2.0.1' //enter the latest multidex version
 }
->>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
