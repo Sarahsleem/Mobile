@@ -1,6 +1,7 @@
 import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_list_view.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/custom_appBar.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/featured_listView.dart';
+import 'package:bookly_application/Features/home/presenations/views/widgets/firstfilmsListView.dart';
 import 'package:bookly_application/constants.dart';
 import 'package:bookly_application/core/utils/app_router.dart';
 import 'package:bookly_application/core/utils/assets.dart';
@@ -83,7 +84,7 @@ class FirstFilmsListBody extends StatelessWidget {
         SliverFillRemaining(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.0),
-            child: BestSellerListView(),
+            child: firstfilmsListView(),
           ),
         ),
       ],
