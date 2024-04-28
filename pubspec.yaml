@@ -42,10 +42,19 @@ dependencies:
   equatable: ^2.0.5
   dartz: ^0.10.1
   dio: ^5.3.3
+<<<<<<< HEAD
   shared_preferences: ^2.2.2
   flutter_toggle_tab: ^1.4.1
   flutter_progress_hud: ^2.0.2
   flutter_rating_bar: ^4.0.1
+=======
+  flutter_toggle_tab: ^1.4.1
+  shared_preferences: ^2.2.3
+  flutter_progress_hud: ^2.0.2
+  flutter_rating_bar: ^4.0.1
+  modal_progress_hud_nsn: ^0.5.1
+  provider: any
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 
 dev_dependencies:
   flutter_test:

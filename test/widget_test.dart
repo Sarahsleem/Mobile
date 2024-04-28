@@ -10,7 +10,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.

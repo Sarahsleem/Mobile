@@ -1,6 +1,9 @@
 import 'dart:ui';
 
+<<<<<<< HEAD
 import 'package:bookly_application/Features/home/repo/Recommendationsapi.dart';
+=======
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 import 'package:bookly_application/constants.dart';
 import 'package:bookly_application/core/utils/app_router.dart';
 import 'package:bookly_application/core/utils/styles.dart';
@@ -10,7 +13,10 @@ import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterApi {
+<<<<<<< HEAD
   static String? id;
+=======
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
   static const registerApiUrl =
       "https://backend-in-db-project.onrender.com/signup";
   userRegister(
@@ -21,32 +27,54 @@ class RegisterApi {
     try {
       print('before');
       Map<String, dynamic> requestBody = {
+<<<<<<< HEAD
         'username' : userNameCont.text,
         'email': emailcont.text,
         'password': passcont.text,
       };
       Response response = await Dio().post("$registerApiUrl", data: requestBody);
+=======
+        'username': userNameCont.text,
+        'email': emailcont.text,
+        'password': passcont.text,
+      };
+      Response response =
+          await Dio().post("$registerApiUrl", data: requestBody);
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
       if (response.statusCode == 200 || response.statusCode == 201) {
         print(response.data);
         GoRouter.of(context).push(AppRouter.kfirstFilmsList);
         print(response.data["AddedID"]);
+<<<<<<< HEAD
       
+=======
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 
         final SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setString("AddedID", response.data["AddedID"]);
         String? AddedId = prefs.getString("AddedID");
+<<<<<<< HEAD
         id=prefs.getString("AddedID");
 
         recommendationApi(id: AddedId);
         print("Id is : $AddedId");
         print("after");
        
+=======
+        print("Id is : $AddedId");
+        print("after");
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
       }
     } catch (e) {
       if (e is DioException) {
         print(e.response?.data);
+<<<<<<< HEAD
         _showErrorDialog(
             context, 'Format of data isn\'t correct',userNameCont, emailcont, passcont);
+=======
+        _showErrorDialog(context, 'Format of data isn\'t correct', userNameCont,
+            emailcont, passcont);
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
       }
     }
   }
@@ -104,4 +132,7 @@ void _showErrorDialog(
     },
   );
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de

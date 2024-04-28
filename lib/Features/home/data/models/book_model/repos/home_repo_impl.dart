@@ -11,6 +11,7 @@ class HomeRepoImplementation implements HomeRepo {
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
+<<<<<<< HEAD
   var data = await apiService.get(
       endPoint:
           'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:Programming');
@@ -22,6 +23,19 @@ class HomeRepoImplementation implements HomeRepo {
 } on Exception catch (e) {
   return left(ServerFailure());
 }
+=======
+      var data = await apiService.get(
+          endPoint:
+              'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:Programming');
+      List<BookModel> books = [];
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } on Exception catch (e) {
+      return left(ServerFailure(e as String));
+    }
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
   }
 
   @override

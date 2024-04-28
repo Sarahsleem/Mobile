@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:bookly_application/Features/home/model/filmdetailsmodel.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_listViewItem.dart';
 import 'package:bookly_application/Features/home/repo/Recommendationsapi.dart';
@@ -32,6 +33,26 @@ class _BestSellerListViewState extends State<BestSellerListView> {
         // if no data, show simple Text
         return const Text("No data available");
       }  },
+=======
+import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_listViewItem.dart';
+import 'package:flutter/material.dart';
+
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      padding: EdgeInsets.zero,
+      itemCount: 10,
+      itemBuilder: ((context, index) {
+        return const Padding(
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: BestSellerListViewItem(),
+        );
+      }),
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
     );
   }
 }

@@ -16,6 +16,7 @@ class SearchViewBody extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+<<<<<<< HEAD
        // leading: ,
         actions: [],
         
@@ -40,6 +41,31 @@ class SearchViewBody extends StatelessWidget {
         ],
       ),
     ),
+=======
+        // leading: ,
+        actions: [],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            CustomSearchText(),
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              'Search Result',
+              style: Styles.textStyle18,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Expanded(child: SearchResultListView()),
+          ],
+        ),
+      ),
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
     );
   }
 }
@@ -55,7 +81,11 @@ class SearchResultListView extends StatelessWidget {
       itemBuilder: ((context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
+<<<<<<< HEAD
           child: BestSellerListViewItem(films: [],),
+=======
+          child: BestSellerListViewItem(),
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
         );
       }),
     );

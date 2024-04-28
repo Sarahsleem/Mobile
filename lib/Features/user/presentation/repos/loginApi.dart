@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import 'package:bookly_application/Features/home/repo/Recommendationsapi.dart';
+=======
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 import 'package:bookly_application/constants.dart';
 import 'package:bookly_application/core/utils/app_router.dart';
 import 'package:bookly_application/core/utils/styles.dart';
@@ -8,7 +11,10 @@ import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginUserApi {
+<<<<<<< HEAD
   static String? id;
+=======
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
   static const loginUserUrl =
       "https://backend-in-db-project.onrender.com/login";
   userLogin(
@@ -24,15 +30,23 @@ class LoginUserApi {
       Response response = await Dio().post("$loginUserUrl", data: requestBody);
       if (response.statusCode == 200 || response.statusCode == 201) {
         print(response.data);
+<<<<<<< HEAD
        GoRouter.of(context).push(AppRouter.kHomeView);
+=======
+        GoRouter.of(context).push(AppRouter.kHomeView);
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
         print(response.data["AddedID"]);
 
         final SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setString("AddedID", response.data["AddedID"]);
         String? AddedId = prefs.getString("AddedID");
+<<<<<<< HEAD
         id=prefs.getString("AddedID");
         print("Id is : $AddedId");
         recommendationApi(id: AddedId);
+=======
+        print("Id is : $AddedId");
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
         print("after");
       }
     } catch (e) {

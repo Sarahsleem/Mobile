@@ -7,7 +7,11 @@ class CustomFilmDetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+<<<<<<< HEAD
      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+=======
+      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
       children: [
         IconButton(
           onPressed: () {

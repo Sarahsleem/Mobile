@@ -26,7 +26,11 @@ class HomeViewBody extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: CustomAppBar(),
               ),
+<<<<<<< HEAD
               //FeaturedBooksListView(),
+=======
+              FeaturedBooksListView(),
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
               SizedBox(
                 height: 8,
               ),
@@ -43,12 +47,19 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
+<<<<<<< HEAD
          SliverFillRemaining(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.0),
             child:
             BestSellerListView()
             ,
+=======
+        const SliverFillRemaining(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.0),
+            child: BestSellerListView(),
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
           ),
         ),
       ],

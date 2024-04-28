@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe59cd21b46370310a8b128e9dfc49cc064f10de
 import 'package:bookly_application/Features/home/presenations/views/widgets/custom_FilmItem.dart';
 import 'package:flutter/material.dart';
 
