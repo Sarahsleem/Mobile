@@ -9,10 +9,14 @@ import '../../../../../core/utils/styles.dart';
 import '../../../../home/presenations/views/widgets/best_seller_listViewItem.dart';
 
 class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({super.key});
+
+   SearchViewBody({super.key, required query});
+
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -54,7 +58,10 @@ class SearchResultListView extends StatelessWidget {
       itemBuilder: ((context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
+
+
           child: BestSellerListViewItem(films: [],),
+
         );
       }),
     );

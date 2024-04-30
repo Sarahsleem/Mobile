@@ -19,25 +19,17 @@ class SearchModel extends Equatable {
     this.cast,
   });
 
-  factory SearchModel.fromJson(Map<String, dynamic> json) => SearchModel(
-        movieid: json['movieid'] as String?,
-        imdbid: json['imdbid'] as String?,
-        tmdbid: json['tmdbid'] as String?,
-        title: json['title'] as String?,
-        poster: json['poster'] as String?,
-        genres: json['genres'] as List<String>?,
-        cast: json['cast'] as List<String>?,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'movieid': movieid,
-        'imdbid': imdbid,
-        'tmdbid': tmdbid,
-        'title': title,
-        'poster': poster,
-        'genres': genres,
-        'cast': cast,
-      };
+  factory SearchModel.fromJson(Map<String, dynamic> json) {
+    return SearchModel(
+      movieid: json['movieid'],
+      imdbid: json['imdbid'],
+      tmdbid: json['tmdbid'],
+      title: json['title'],
+      poster: json['poster'],
+      genres: json['genres'] != null ? List<String>.from(json['genres']) : [],
+      cast: json['cast'] != null ? List<String>.from(json['cast']) : [],
+    );
+  }
 
   @override
   List<Object?> get props {
