@@ -3,7 +3,7 @@ import 'package:bookly_application/Features/home/presenations/views/first_films_
 import 'package:go_router/go_router.dart';
 import '../../Features/Splash/presentation/views/splash_view.dart';
 import '../../Features/home/presenations/views/home_view.dart';
-import '../../Features/search/presentation/views/search_view.dart';
+
 import '../../Features/user/presentation/view_models/views/user_screen.dart';
 
 abstract class AppRouter {
@@ -31,10 +31,7 @@ abstract class AppRouter {
         path: kBookDetailsView,
         builder: (context, state) => const FilmDetailsView(),
       ),
-      GoRoute(
-        path: kSearchView,
-        builder: (context, state) => const SearchView(),
-      ),
+
       GoRoute(
         path: kfirstFilmsList,
         builder: (context, state) => const FirstFilmsListView(),

@@ -1,15 +1,25 @@
-import 'package:bookly_application/Features/home/presenations/views/widgets/film_rating.dart';
-import 'package:bookly_application/core/utils/app_router.dart';
+import 'dart:io';
+
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
-import '../../../../../core/utils/assets.dart';
-import '../../../../../core/utils/styles.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/styles.dart'; // Import File class
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+  final String title;
+  final String director;
+  final String imagePath; // Assuming this is a local file path
+
+  const BestSellerListViewItem({
+    required this.title,
+    required this.director,
+    required this.imagePath,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +31,24 @@ class BestSellerListViewItem extends StatelessWidget {
         height: 120,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 2.5 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  image: const DecorationImage(
-                    image: AssetImage(AssetsData.testImage),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
+            Image.network(
+              imagePath,
+              loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) {
+                  return child; // Image is fully loaded
+                } else {
+                  return Center(
+                    child: CircularProgressIndicator( // Display a progress indicator while loading
+                      value: loadingProgress.expectedTotalBytes != null
+                          ? loadingProgress.cumulativeBytesLoaded / (loadingProgress.expectedTotalBytes as int)
+                          : null,
+                    ),
+                  );
+                }
+              },
+              errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
+                return Text('Failed to load image'); // Display an error message if image fails to load
+              },
             ),
             const SizedBox(
               width: 30,
@@ -43,7 +60,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
-                      'Divergent',
+                      title,
                       style: Styles.textStyle20.copyWith(
                         fontFamily: kAlegreya,
                       ),
@@ -54,24 +71,12 @@ class BestSellerListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                  const Text(
-                    'Neil Burger',
+                  Text(
+                    director,
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(
                     height: 3,
-                  ),
-                  Row(
-                    children: [
-                      /* Text(
-                        '19.99 €',
-                        style: Styles.textStyle20.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ), */
-                      const Spacer(),
-                      FilmRating(),
-                    ],
                   ),
                 ],
               ),
