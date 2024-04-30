@@ -27,7 +27,7 @@ Future<Films> getFilmApi() async {
     if (response.statusCode == 200 || response.statusCode == 201) {
       final filmsData = response.data;
       
-    Films targetFilm=  Films(
+     targetFilm=  Films(
           movieId: filmsData['movieid'],
           title: filmsData['title'],
           poster: filmsData['poster'],
@@ -36,7 +36,8 @@ Future<Films> getFilmApi() async {
         );
      
       //print(targetFilm);
-      print(targetFilm.title);
+      //print(targetFilm.title);
+      return targetFilm;
     } else {
       print('Failed to fetch films. Status code: ${response.statusCode}');
     }
