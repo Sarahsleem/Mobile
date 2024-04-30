@@ -1,3 +1,4 @@
+import 'package:bookly_application/Features/home/model/filmdetailsmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -6,8 +7,7 @@ import '../../../../../core/utils/widgets/custom_button.dart';
 import '../../../../user/services/rating_api.dart';
 
 class userRating extends StatefulWidget {
-  const userRating({super.key});
-
+  const userRating({Key? key,}) ;
   @override
   State<userRating> createState() => _userRetingState();
 }
@@ -15,6 +15,7 @@ class userRating extends StatefulWidget {
 class _userRetingState extends State<userRating> {
   double rating = 0;
   String rateComment = 'Good';
+  double? lastRating;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -46,9 +47,9 @@ class _userRetingState extends State<userRating> {
           textColor: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(16)),
           onPressed: () {
-            RatingApi().userRating(
+            RatingApi().userRate(
               context: context, // Replace with actual movie name
-              rating: rating, // Pass the selected rating
+              rating: rating,
             );
           },
         ),
