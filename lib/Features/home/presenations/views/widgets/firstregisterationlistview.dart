@@ -1,18 +1,20 @@
 import 'package:bookly_application/Features/home/model/filmdetailsmodel.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_listViewItem.dart';
 import 'package:bookly_application/Features/home/repo/Recommendationsapi.dart';
+import 'package:bookly_application/Features/user/presentation/repos/loginApi.dart';
 import 'package:bookly_application/Features/user/presentation/repos/regestrationApi.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class firstfilmsListView extends StatefulWidget {
-  const firstfilmsListView({super.key});
+class firstregrListView extends StatefulWidget {
+  const firstregrListView({super.key});
   @override
-  State<firstfilmsListView> createState() => _BestSellerListViewState();
+  State<firstregrListView> createState() => _firstregrListViewState();
 }
 
-class _BestSellerListViewState extends State<firstfilmsListView> {
+class _firstregrListViewState extends State<firstregrListView> {
 
-  Future<List<Films>> filmsFuture= recommendationApi( );
+  Future<List<Films>> filmsFuture= recommendationApi();
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Films>>(

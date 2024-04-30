@@ -2,12 +2,15 @@ import 'dart:convert';
 
 import 'package:bookly_application/Features/home/model/filmdetailsmodel.dart';
 import 'package:dio/dio.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 const recommendationApiUrl = "https://backend-in-db-project.onrender.com/recommend";
 
-Future<List<Films>> recommendationApi({ String? id}) async {
+Future<List<Films>> recommendationApi() async {
   List<Films> filmsList = [];
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String? id = prefs.getString("AddedID");
 
   try {
     if (id != null) {

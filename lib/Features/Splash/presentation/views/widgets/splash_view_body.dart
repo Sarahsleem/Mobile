@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../../core/utils/app_router.dart';
 
@@ -69,10 +70,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void navigateToHome() {
     Future.delayed(
       const Duration(seconds: 2),
-      () {
+      () async{
+        WidgetsFlutterBinding.ensureInitialized();
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        var id = prefs.getString("AddedID");
+        print(id);
         // Get.to(() => const HomeView(),
         //    transition: Transition.downToUp, duration: kTranstionDuration);
-        GoRouter.of(context).push(AppRouter.klogin);
+        id==null?GoRouter.of(context).push(AppRouter.klogin):GoRouter.of(context).push(AppRouter.kHomeView);
       },
     );
   }
