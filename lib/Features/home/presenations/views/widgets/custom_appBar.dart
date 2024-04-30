@@ -2,6 +2,7 @@ import 'package:bookly_application/Features/home/presenations/views/widgets/best
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/assets.dart';
@@ -39,7 +40,9 @@ class CustomAppBar extends StatelessWidget {
           ),
           //Spacer(),
           IconButton(
-            onPressed: () {
+            onPressed: () async{
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              prefs.remove("AddedID");
               GoRouter.of(context).push(AppRouter.klogin);
             },
             icon: const Icon(

@@ -13,7 +13,7 @@ class BestSellerListView extends StatefulWidget {
 
 class _BestSellerListViewState extends State<BestSellerListView> {
 
-  Future<List<Films>> filmsFuture= recommendationApi(id: LoginUserApi.id);
+  Future<List<Films>> filmsFuture= recommendationApi();
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Films>>(
