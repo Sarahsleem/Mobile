@@ -24,11 +24,11 @@ class BestSellerListViewItem extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 8.0),
           child: GestureDetector(
             onTap: (() {
-              print(film.movieId);
-              print('shit');
+              print(1);
+
               setMovieId(film.movieId);
-              print(getMovieId());
-              getFilmApi();
+
+              //getFilmApi();
               GoRouter.of(context).push(AppRouter.kBookDetailsView);
             }),
             child: SizedBox(

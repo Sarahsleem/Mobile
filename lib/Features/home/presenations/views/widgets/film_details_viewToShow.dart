@@ -23,6 +23,7 @@ class FilmDetailsShow extends StatelessWidget {
               children:  [
                 CustomFilmDetailsAppBar(),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.2),
@@ -36,9 +37,9 @@ class FilmDetailsShow extends StatelessWidget {
             fit: BoxFit.fill,
           ),  */
         ),
-        /* child: FittedBox(
+         child: FittedBox(
           fit: BoxFit.fill,
-          child: Image.network(film.poster)), */
+          child: Image.network(film.poster)),
         
       ),
     ),
@@ -47,7 +48,9 @@ class FilmDetailsShow extends StatelessWidget {
           height: 35,
         ),
          Text(
+
           film.title,
+          textAlign: TextAlign.center,
           style: Styles.textStyle30,
         ),
        
