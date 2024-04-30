@@ -38,6 +38,7 @@ class RegisterApi {
         id=AddedId;
 
         print("Id is : $AddedId");
+        setUserId(response.data["AddedID"]);
         print("after");
       }
     } catch (e) {

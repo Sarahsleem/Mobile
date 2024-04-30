@@ -25,12 +25,12 @@ class LoginUserApi {
         print(response.data);
         GoRouter.of(context).push(AppRouter.kHomeView);
         print(response.data["AddedID"]);
-
         final SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setString("AddedID", response.data["AddedID"]);
         String? AddedId = prefs.getString("AddedID");
         id=AddedId;
         print("Id is : $AddedId");
+        setUserId(response.data["AddedID"]);
         print("after");
       }
     } catch (e) {

@@ -25,6 +25,7 @@ class BestSellerListViewItem extends StatelessWidget {
           child: GestureDetector(
             onTap: (() {
               print(film.movieId);
+              setMovieName(film.title);
               GoRouter.of(context).push(AppRouter.kBookDetailsView);
             }),
             child: SizedBox(
