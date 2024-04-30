@@ -1,4 +1,4 @@
-import 'package:bookly_application/Features/search/presentation/views/widgets/custom_search_text_field.dart';
+/* import 'package:bookly_application/Features/search/presentation/views/widgets/custom_search_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -67,3 +67,4 @@ class SearchResultListView extends StatelessWidget {
     );
   }
 }
+ */

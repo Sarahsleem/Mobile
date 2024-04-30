@@ -1,23 +1,28 @@
 import 'package:bookly_application/Features/home/model/filmdetailsmodel.dart';
-import 'package:bookly_application/Features/home/presenations/views/widgets/custom_FilmItem.dart';
-import 'package:bookly_application/Features/home/presenations/views/widgets/film_rating.dart';
+import 'package:bookly_application/Features/home/presenations/views/widgets/custom_film_details_appBar.dart';
+import 'package:bookly_application/Features/home/presenations/views/widgets/film_detail_section.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/userRating.dart';
 import 'package:bookly_application/core/utils/assets.dart';
+import 'package:bookly_application/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/styles.dart';
-
-class FilmDetailSection extends StatelessWidget {
-   FilmDetailSection({super.key, 
-   //required this.title, required this.img
-   });
-  /* late String title;
-  late String img; */
-
+class FilmDetailsShow extends StatelessWidget {
+  const FilmDetailsShow({super.key, required this.film});
+ final Films film;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    return Column(
+    print('in the code');
+    print(film.title);
+    return 
+      
+        SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Column(
+              children:  [
+                CustomFilmDetailsAppBar(),
+                Column(
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.2),
@@ -26,11 +31,14 @@ class FilmDetailSection extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-           image: DecorationImage(
+           /* image: DecorationImage(
             image: AssetImage(AssetsData.testImage),
             fit: BoxFit.fill,
-          ), 
+          ),  */
         ),
+        /* child: FittedBox(
+          fit: BoxFit.fill,
+          child: Image.network(film.poster)), */
         
       ),
     ),
@@ -39,7 +47,7 @@ class FilmDetailSection extends StatelessWidget {
           height: 35,
         ),
          Text(
-          'title',
+          film.title,
           style: Styles.textStyle30,
         ),
        
@@ -52,6 +60,14 @@ class FilmDetailSection extends StatelessWidget {
         ),
        
       ],
-    );
+    ),
+               
+              
+              ],
+            ),
+          ),
+        );
+      
+    
   }
 }

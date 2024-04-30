@@ -22,4 +22,14 @@ class Films {
   String toString() {
     return 'Films(movieId: $movieId, title: $title, poster: $poster, genres: $genres, cast: $cast)';
   }
+  String getFilmId() {
+    return movieId;
+  }
+  String getFilmTitle() {
+    return title;
+  }
+  String getFilmPoster() {
+    return poster;
+  }
+
 }

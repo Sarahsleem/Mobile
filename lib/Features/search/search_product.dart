@@ -1,11 +1,9 @@
 import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_listViewItem.dart';
+import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_listViewItem_search.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/similar_films_listView.dart';
 import 'package:bookly_application/Features/search/data/search.dart';
-
 import 'package:bookly_application/Features/search/data/search_model.dart';
 import 'package:bookly_application/Features/search/presentation/views/widgets/search_view_body.dart';
-
-
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import '../../core/errors/failures.dart';
@@ -62,7 +60,7 @@ class ProductSearch extends SearchDelegate {
               return ListView.builder(
                 itemCount: searchResults.length,
                 itemBuilder: (context, index) {
-                  return BestSellerListViewItem(
+                  return BestSellerListViewItemSearch(
                     // Pass necessary data to the BestSellerListViewItem
                     title: searchResults[index].title ?? "",
                     director: searchResults[index]. tmdbid?? "",

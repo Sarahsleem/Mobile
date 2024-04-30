@@ -16,18 +16,6 @@ class _BestSellerListViewState extends State<BestSellerListView> {
   Future<List<Films>> filmsFuture= recommendationApi();
   @override
   Widget build(BuildContext context) {
-
-    return ListView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.zero,
-      itemCount: 10,
-      itemBuilder: ((context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: BestSellerListViewItem(title: '', director: '', imagePath: '',),
-        );
-      }),
-
     return FutureBuilder<List<Films>>(
 
 
@@ -44,7 +32,6 @@ class _BestSellerListViewState extends State<BestSellerListView> {
         // if no data, show simple Text
         return const Text("No data available");
       }  },
-
     );
   }
 }
