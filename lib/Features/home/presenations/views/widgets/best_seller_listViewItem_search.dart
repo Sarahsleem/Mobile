@@ -1,12 +1,13 @@
 import 'dart:io';
 
+import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_listViewItem.dart';
+import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_list_view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
-import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart'; // Import File class
 
 class BestSellerListViewItemSearch extends StatelessWidget {
@@ -25,7 +26,13 @@ class BestSellerListViewItemSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (() {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        var movieId = getMovieId();
+        if (movieId != null) {
+          GoRouter.of(context)
+              .go(BestSellerListViewItem(films: [movieId]) as String);
+        } else {
+          // Handle the case where getMovieId() returns null
+        }
       }),
       child: SizedBox(
         height: 120,
@@ -33,21 +40,26 @@ class BestSellerListViewItemSearch extends StatelessWidget {
           children: [
             Image.network(
               imagePath,
-              loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+              loadingBuilder: (BuildContext context, Widget child,
+                  ImageChunkEvent? loadingProgress) {
                 if (loadingProgress == null) {
                   return child; // Image is fully loaded
                 } else {
                   return Center(
-                    child: CircularProgressIndicator( // Display a progress indicator while loading
+                    child: CircularProgressIndicator(
+                      // Display a progress indicator while loading
                       value: loadingProgress.expectedTotalBytes != null
-                          ? loadingProgress.cumulativeBytesLoaded / (loadingProgress.expectedTotalBytes as int)
+                          ? loadingProgress.cumulativeBytesLoaded /
+                              (loadingProgress.expectedTotalBytes as int)
                           : null,
                     ),
                   );
                 }
               },
-              errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
-                return Text('Failed to load image'); // Display an error message if image fails to load
+              errorBuilder:
+                  (BuildContext context, Object error, StackTrace? stackTrace) {
+                return Text(
+                    'Failed to load image'); // Display an error message if image fails to load
               },
             ),
             const SizedBox(
