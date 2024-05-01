@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart'; // Import File class
 
 class BestSellerListViewItemSearch extends StatelessWidget {
