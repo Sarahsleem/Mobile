@@ -29,7 +29,7 @@ class _FilmDetailsViewBodyState extends State<FilmDetailsViewBody> {
     // TODO: implement initState
     super.initState();
    // film = getFilmApi();
-    print('body');
+    print('body1');
     //print(targetFilm);
   }
    Future<Films> filmsFuture= getFilmApi();

@@ -14,7 +14,7 @@ class BestSellerListViewSearch extends StatelessWidget {
       itemBuilder: ((context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
-          child: BestSellerListViewItemSearch(title: '', director: '', imagePath: '',),
+          child: BestSellerListViewItemSearch(title: '', director: '', imagePath: '', movieid: '',),
         );
       }),
     );
