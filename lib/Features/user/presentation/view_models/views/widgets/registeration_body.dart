@@ -32,9 +32,9 @@ class _RegisterationState extends State<Registeration> {
   bool showPass = true;
   bool? isChecked = false;
   @override
-  @override
   Widget build(BuildContext context) {
     return ModalProgressHUD(
+      color: Colors.white,
       inAsyncCall: isLoading,
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -105,8 +105,8 @@ class _RegisterationState extends State<Registeration> {
                         showPass = !showPass;
                       });
                     },
-                    icon:
-                        Icon(showPass ? Icons.visibility_off : Icons.visibility),
+                    icon: Icon(
+                        showPass ? Icons.visibility_off : Icons.visibility),
                   ),
                 ),
               ),
@@ -117,21 +117,17 @@ class _RegisterationState extends State<Registeration> {
                 text: 'Register',
                 onTap: () {
                   if (formKey.currentState!.validate()) {
-                    isLoading = true;
-                    setState(() {
-                      
-                    });
+                    setState(() {isLoading = true;});
                     RegisterApi().userRegister(
                         context: context,
                         userNameCont: userName,
                         emailcont: emailCont,
                         passcont: passCont);
-                        isLoading = false;
-                        setState(() {
-                          
-                        });
                     // GoRouter.of(context).push(AppRouter.kHomeView);
                   }
+                  setState(() {
+                    isLoading = false;
+                  });
                 },
               ),
             ],
