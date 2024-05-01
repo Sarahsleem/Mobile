@@ -51,7 +51,7 @@ class ProductSearch extends SearchDelegate {
         future: APIService.search(query),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return Center(child: CircularProgressIndicator(color: Colors.white,));
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else {
@@ -64,7 +64,7 @@ class ProductSearch extends SearchDelegate {
                     // Pass necessary data to the BestSellerListViewItem
                     title: searchResults[index].title ?? "",
                     director: searchResults[index]. tmdbid?? "",
-                    imagePath: searchResults[index].poster ?? "",
+                    imagePath: searchResults[index].poster ?? "", movieid: searchResults[index].movieid,
                     // Add more parameters as needed
                   );
                 },

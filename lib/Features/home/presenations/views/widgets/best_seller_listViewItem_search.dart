@@ -13,18 +13,20 @@ class BestSellerListViewItemSearch extends StatelessWidget {
   final String title;
   final String director;
   final String imagePath; // Assuming this is a local file path
+  final String ?movieid;
 
   const BestSellerListViewItemSearch({
     required this.title,
     required this.director,
     required this.imagePath,
-    Key? key,
+    Key? key, required this.movieid,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (() {
+        setMovieId(movieid);
         GoRouter.of(context).push(AppRouter.kBookDetailsView);
       }),
       child: SizedBox(
