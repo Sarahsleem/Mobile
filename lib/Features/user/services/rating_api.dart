@@ -9,14 +9,15 @@ class RatingApi {
       "https://backend-in-db-project.onrender.com/rating";
   userRate({
     required BuildContext context,
-    required double rating,
+    required String rating,
   }) async {
     try {
       Map<String, dynamic> requestBody = {
         "userid": getUserId(),
-        "moviename": getMovieName(),
-        "rating": rating.toString(),
+        "movieid": getMovieId(),
+        "rating": rating,
       };
+      print(requestBody);
       Response response = await Dio().post("$baseUrl", data: requestBody);
       // Check if response is successful
       if (response.statusCode == 200 || response.statusCode == 201) {
