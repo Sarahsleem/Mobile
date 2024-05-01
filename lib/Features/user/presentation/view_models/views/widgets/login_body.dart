@@ -27,60 +27,52 @@ class _LoginState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) => ModalProgressHUD(
-        inAsyncCall: isLoading,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-          child: Form(
-            key: formKey,
-            child: Column(
-              children: [
-                CustomTextField(
-                  icon: Icons.mail,
-                  hintText: 'Email',
-                  cont: emailCont,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                CustomField(
-                  hintText: 'Password',
-                  cont: passCont,
-                ),
-                /* CustomChecktile(
-                  preText: 'Remember me',
-                  sufText: 'Forget password?',
-                  onTap: () {
-                    GoRouter.of(context).push('/ForgetPass');
-                  },
-                ), */
-                const SizedBox(
-                  height: 50,
-                ),
-                CustomButon(
-                  text: 'Login',
-                  onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      print('login');
-                     
-                     
-                      setState(() { isLoading = true;});
-                       print('$isLoading');
-                       LoginUserApi().userLogin(
-                          context: context,
-                          emailcont: emailCont,
-                          passcont: passCont);
-                      
-                      
-                      setState(() {isLoading = false;}); 
-                       print('$isLoading');
-                      // GoRouter.of(context).push(AppRouter.kHomeView);
-                    }
-                  },
-                ),
-              ],
-            ),
+    return ModalProgressHUD(
+      color: Colors.white,
+      opacity: .7,
+      inAsyncCall: isLoading,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: Form(
+          key: formKey,
+          child: Column(
+            children: [
+              CustomTextField(
+                icon: Icons.mail,
+                hintText: 'Email',
+                cont: emailCont,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomField(
+                hintText: 'Password',
+                cont: passCont,
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              CustomButon(
+                text: 'Login',
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    print('login');
+                    setState(() {
+                      isLoading = true;
+                    });
+                    print('$isLoading');
+                    LoginUserApi().userLogin(
+                        context: context,
+                        emailcont: emailCont,
+                        passcont: passCont);
+                    print('$isLoading');
+                    // GoRouter.of(context).push(AppRouter.kHomeView);
+                  }
+                  setState(() {isLoading = false;});
+                  print('$isLoading');
+                },
+              ),
+            ],
           ),
         ),
       ),
