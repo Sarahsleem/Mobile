@@ -13,7 +13,7 @@ class userRating extends StatefulWidget {
 }
 
 class _userRetingState extends State<userRating> {
-  double rating = 0;
+  String rating = '0';
   String rateComment = 'Good';
   double? lastRating;
   @override
@@ -34,7 +34,7 @@ class _userRetingState extends State<userRating> {
           ),
           onRatingUpdate: (value) {
             setState(() {
-              rating = value;
+              rating = value.toString();
             });
           },
         ),
